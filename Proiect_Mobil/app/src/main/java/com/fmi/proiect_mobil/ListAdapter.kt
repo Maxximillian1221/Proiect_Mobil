@@ -32,6 +32,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ProdusViewHolder>() {
 
         holder.itemView.produs_afisare.text = produscurent.denumire_produs.toString()
         holder.itemView.cantitate_afisare.text = produscurent.cantitate_produs.toString()
+        holder.itemView.text_id.text=produscurent.id.toString()
 
     }
 
