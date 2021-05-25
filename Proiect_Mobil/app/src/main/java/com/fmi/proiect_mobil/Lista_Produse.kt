@@ -22,7 +22,7 @@ import com.fmi.proiect.room.ProdusViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-@Suppress("DEPRECATION")
+
 class Lista_Produse : AppCompatActivity() {
 
 
