@@ -5,21 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.observe
-import androidx.navigation.fragment.navArgs
-import androidx.navigation.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.fmi.proiect.room.Produs
 import com.fmi.proiect.room.ProdusViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -76,7 +69,7 @@ class Lista_Produse : AppCompatActivity() {
         // view model produs
 
         mProdusViewModel = ViewModelProvider(this).get(ProdusViewModel::class.java)
-        mProdusViewModel.readAllData.observe(this,  {
+        mProdusViewModel.readAllData.observe(this, Observer  {
 
             adapter.setData(it)
 
