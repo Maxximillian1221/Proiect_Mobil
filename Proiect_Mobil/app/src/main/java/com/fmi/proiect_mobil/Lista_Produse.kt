@@ -9,7 +9,9 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
@@ -110,15 +112,12 @@ class Lista_Produse : AppCompatActivity() {
 
             private fun getItemsFromDb(searchText: String) {
                 var searchText = searchText
-                val adapter = ListAdapter()
-
                 searchText = "%$searchText%"
 
-                mProdusViewModel.cauta(searchText).observe(this@Lista_Produse, Observer { list ->
+                mProdusViewModel.cauta(searchText).observe(this@Lista_Produse, Observer { list -> //display in log-uri
                         list.let {
 
                             Log.e("Gasite = ", list.toString())
-                            adapter.setData(it)
 
                         }
 
@@ -145,7 +144,20 @@ class Lista_Produse : AppCompatActivity() {
 
     private fun stergelista() { // functie de stergere lista
 
-        mProdusViewModel.stergeLista()
+        val builder = AlertDialog.Builder(this) // alerta stergere
+        builder.setPositiveButton("Da"){ _,_ ->
+
+            mProdusViewModel.stergeLista()
+            Toast.makeText(this, "Lista a fost stearsa", Toast.LENGTH_SHORT).show()
+
+        }
+        builder.setNegativeButton("Nu"){_,_ ->
+        }
+
+        builder.setTitle("Sterge lista")
+        builder.setMessage("Sunteti sigur ca doriti sa stergeti intreaga lista?")
+        builder.create().show()
+
 
     }
 

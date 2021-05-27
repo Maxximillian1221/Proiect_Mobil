@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         mProdusViewModel = ViewModelProvider(this).get(ProdusViewModel::class.java)
 
 
@@ -37,7 +36,6 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(i , 123)
 
         }
-
 
 
         button_adauga.setOnClickListener{ // buton salveaza apelez functia
@@ -88,7 +86,7 @@ class MainActivity : AppCompatActivity() {
             val share_intent = Intent ()
             share_intent.action = Intent.ACTION_SEND
             share_intent.type = "text/plain"
-            share_intent.putExtra(Intent.EXTRA_TEXT , "Produs: "+ s +" "+ "Cantitate: " + a)
+            share_intent.putExtra(Intent.EXTRA_TEXT , "Cumpara: "+ a +" "+ s )
             startActivity(Intent.createChooser(share_intent, "ok"))
 
 
