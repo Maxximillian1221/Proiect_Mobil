@@ -7,7 +7,6 @@ class ProdusRepository(private val  produsDao: ProdusDao) {
     val readAllData : LiveData<List<Produs>> = produsDao.readAllProduse()
 
     suspend fun addProdus (produs: Produs){
-
         produsDao.addProdus(produs)
 
     }

@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun insertProdus() { /// functie insert produs
 
-        //asignez valoarea din inputurile din layout
+        //store valorile din input in variabile
 
         val denumire_prod = denumire_produs_et.text.toString()
         val cantitate_prod = cantitate_produs_et.text.toString()

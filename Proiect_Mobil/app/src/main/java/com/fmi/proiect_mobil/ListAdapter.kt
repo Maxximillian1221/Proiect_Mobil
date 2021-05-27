@@ -19,14 +19,14 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ProdusViewHolder>() {
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProdusViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProdusViewHolder { // view holder cu layout-ul pentru row
 
         return ProdusViewHolder(LayoutInflater.from(parent.context).
         inflate(R.layout.layout_produs, parent,false))
 
     }
 
-    override fun onBindViewHolder(holder: ProdusViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProdusViewHolder, position: Int) { // inserez datele despre produs in layout
 
         val produscurent = listaproduse[position]
 

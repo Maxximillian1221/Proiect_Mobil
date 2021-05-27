@@ -12,8 +12,8 @@ abstract class ProdusDatabase: RoomDatabase() {
 
     abstract fun produsDao() : ProdusDao
 
+    companion object{ // Singleton nu deschide mai multe instante in acelasi timp
 
-    companion object{
 
         @Volatile
         private var INSTANCE : ProdusDatabase? = null

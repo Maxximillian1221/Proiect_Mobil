@@ -110,11 +110,11 @@ class Lista_Produse : AppCompatActivity() {
                 return true
             }
 
-            private fun getItemsFromDb(searchText: String) {
-                var searchText = searchText
-                searchText = "%$searchText%"
+            private fun getItemsFromDb(textcauta: String) {
+                var textcauta = textcauta
+                textcauta = "%$textcauta%"
 
-                mProdusViewModel.cauta(searchText).observe(this@Lista_Produse, Observer { list -> //display in log-uri
+                mProdusViewModel.cauta(textcauta).observe(this@Lista_Produse, Observer { list -> //display in log-uri
                         list.let {
 
                             Log.e("Gasite = ", list.toString())
